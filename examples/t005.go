@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "bitbucket.org/binet/go-gnuplot/pkg/gnuplot"
+import "github.com/ruphin/go-gnuplot/pkg/gnuplot"
 
 func main() {
 	fname := ""
