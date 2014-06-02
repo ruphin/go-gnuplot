@@ -31,7 +31,7 @@ func init() {
 		fmt.Printf("** could not find path to 'gnuplot':\n%v\n", err)
 		panic("could not find 'gnuplot'")
 	}
-	fmt.Printf("-- found gnuplot command: %s\n", g_gnuplot_cmd)
+	// fmt.Printf("-- found gnuplot command: %s\n", g_gnuplot_cmd)
 }
 
 type gnuplot_error struct {
