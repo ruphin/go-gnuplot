@@ -317,40 +317,9 @@ func (self *Plotter) SetPlotCmd(cmd string) (err error) {
 }
 
 // SetStyle changes the style used by the gnuplot subprocess.
-// Only valid styles are accepted:
-//      "lines", 
-//      "points", 
-//      "linepoints",
-// 		"impulses", 
-//      "dots",
-// 		"steps",
-// 		"errorbars",
-// 		"boxes",
-// 		"boxerrorbars",
-// 		"pm3d"
 func (self *Plotter) SetStyle(style string) (err error) {
-	allowed := []string{
-		"lines", "points", "linepoints",
-		"impulses", "dots",
-		"steps",
-		"errorbars",
-		"boxes",
-		"boxerrorbars",
-		"pm3d"}
-
-	for _, s := range allowed {
-		if s == style {
-			self.style = style
-			err = nil
-			return err
-		}
-	}
-
-	fmt.Printf("** style '%v' not in allowed list %v\n", style, allowed)
-	fmt.Printf("** default to 'points'\n")
-	self.style = "points"
-	err = &gnuplot_error{fmt.Sprintf("invalid style '%s'", style)}
-
+	self.style = style
+	err = nil
 	return err
 }
 
